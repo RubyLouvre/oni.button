@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src='./dist/ex1.js'></script>
+    </head>
+    <body>
+        <fieldset ms-controller="ex1">
+            <legend>button type</legend>
+            <div>
+                <xmp ms-widget="{is:'ms-button',size: 'default'}">input元素</xmp>
+               
+                <xmp ms-widget="{is:'ms-button',type:'icon',position: 'left',icon:'\&\#xf038;'}">button元素</xmp>
+                <xmp ms-widget="{is:'ms-button',type:'icon',position: 'left-right',icon:'\&\#xf047;-\&\#xf03e;'}">button元素</xmp>
+                <xmp ms-widget="{is:'ms-button',type:'labeledIcon',position: 'left',icon:'\&\#xf088;'}">a元素</xmp>
+                <xmp ms-widget="{is:'ms-button',type:'labeledIcon',position: 'right',icon:'\&\#xf06b;'}">div元素</xmp>
+                <xmp ms-widget="{is:'ms-button',type:'labeledIcon',position: 'left-right',icon:'\&\#xf047;-\&\#xf03e;'}">a元素</xmp>
+               
+            </div>
+            <div><p>带圆角效果</p>
+                <xmp ms-widget="{is:'ms-button',corner:4}">input元素</xmp>
+                <xmp ms-widget="{is:'ms-button',type:'icon',position: 'left',icon:'\&\#xf038;',corner:4}">button元素</xmp>
+                <xmp ms-widget="{is:'ms-button',type:'icon',position: 'left-right',icon:'\&\#xf047;-\&\#xf03e;',corner:4}">button元素</xmp>
+                <xmp ms-widget="{is:'ms-button',type:'labeledIcon',position: 'left',icon:'\&\#xf088;',corner:4}">a元素</xmp>
+                <xmp ms-widget="{is:'ms-button',type:'labeledIcon',position: 'right',icon:'\&\#xf06b;',corner:4}">div元素</xmp>
+                <xmp ms-widget="{is:'ms-button',type:'labeledIcon',position: 'left-right',icon:'\&\#xf047;-\&\#xf03e;',corner:4}">a元素</xmp>
+               
+            </div>
+             <div><p>带圆角效果</p>
+                <xmp ms-widget="{is:'ms-button',color: 'primary',type:'icon',icon:'\&\#xf038;',size:'small'}" >icon only</xmp>
+                <xmp ms-widget="{is:'ms-button',color: 'warning',type:'labeledIcon',icon:'\&\#xf038;',position:'left',size:'small'}" >icon left</xmp>
+                <xmp ms-widget="{is:'ms-button',color: 'danger', type:'labeledIcon',icon:'\&\#xf038;',position:'left',width:120}" >icon left</xmp>
+                <xmp ms-widget="{is:'ms-button',color: 'success', type:'labeledIcon',icon:'\&\#xf038;',position:'right',size:'big'}" >icon right</xmp>
+                <xmp ms-widget="{is:'ms-button',color: 'info', type:'labeledIcon',icon:'\&\#xf001;-\&\#xf06b;',position:'left-right',size:'large'}" >icon left right</xmp>
+
+               
+            </div>
+        </fieldset>
+
+    </body>
+</html>
