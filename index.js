@@ -62,8 +62,12 @@ avalon.component('ms-button', {
     },
     defaults: {
         type: 'text', //text, icon, labeledIcon
+        //内部生成这个
         buttonStateClass: 'oni-state-default',
         buttonCornerClass: '',
+        buttonSizeClass: '',
+        buttonDisabledClass: '',
+        buttonColorClass: '',
         position: 'left',
         label: '',
         iconPosition: '', //@config 当type为icon或者labeledIcon时，定义icon在哪边，默认在text的左边，也可以配置为右边("right"),或者两边都有("left-right")
