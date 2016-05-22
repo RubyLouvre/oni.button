@@ -1,4 +1,4 @@
-/*! built in 2016-5-22:16 version 1.0 by 司徒正美 */
+/*! built in 2016-5-22:20 version 1.0 by 司徒正美 */
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
 		module.exports = factory();
@@ -8595,7 +8595,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        vm.buttonColorClass = 'oni-button-' + vm.color
 	     }
 	     if(vm.disabled){
-	        vm.buttonSizeClass = 'oni-state-disabled'
+	        vm.buttonDisabledClass = 'oni-state-disabled'
 	     }
 	     var icons = vm.icon
 	     if(icons.length > 1){
@@ -8624,9 +8624,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	                      var iconArr = icons && icons.split("-") || ["", ""],
 	                          iconLeft = iconArr[0],
 	                          iconRight = iconArr[1]
-	                      buttonText = "<i class='oni-icon oni-icon-left'>" + iconLeft.replace(/\\/g, "") + "&nbsp;</i>" 
+	                      buttonText = "<i class='oni-icon oni-icon-left'>" + iconLeft.replace(/\\/g, "") + "</i>" 
 	                              + "<span class='oni-button-text oni-button-text-middle" + (!iconText ? " oni-button-text-hidden" : "") + "'><slot name='label'></slot></span>" + 
-	                              "<i class='oni-icon oni-icon-right'>&nbsp;" + iconRight.replace(/\\/g, "") + "</i>"
+	                              "<i class='oni-icon oni-icon-right'>" + iconRight.replace(/\\/g, "") + "</i>"
 	                  break;
 	              }
 	          break;
@@ -8656,7 +8656,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 3 */
 /***/ function(module, exports) {
 
-	module.exports = "<button type=\"button\" class=\"oni-button oni-widget\"\n ms-class=\"[@buttonStateClass,@buttonCornerClass,@buttonDisabledClass,@buttonSizeClass,@buttonColorClass]\"\n ms-css=\"{borderRadius:@corner,width:@width}\">\n  INNER\n</button>\n"
+	module.exports = "<button type=\"button\" class=\"oni-button oni-widget\"\n ms-class=\"[@buttonStateClass,@buttonCornerClass,@buttonSizeClass,@buttonColorClass,@buttonDisabledClass]\"\n ms-css=\"{borderRadius:@corner,width:@width}\">\n  INNER\n</button>\n"
 
 /***/ },
 /* 4 */

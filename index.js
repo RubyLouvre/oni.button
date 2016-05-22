@@ -27,7 +27,7 @@ avalon.component('ms-button',{
         vm.buttonColorClass = 'oni-button-' + vm.color
      }
      if(vm.disabled){
-        vm.buttonSizeClass = 'oni-state-disabled'
+        vm.buttonDisabledClass = 'oni-state-disabled'
      }
      var icons = vm.icon
      if(icons.length > 1){
@@ -56,9 +56,9 @@ avalon.component('ms-button',{
                       var iconArr = icons && icons.split("-") || ["", ""],
                           iconLeft = iconArr[0],
                           iconRight = iconArr[1]
-                      buttonText = "<i class='oni-icon oni-icon-left'>" + iconLeft.replace(/\\/g, "") + "&nbsp;</i>" 
+                      buttonText = "<i class='oni-icon oni-icon-left'>" + iconLeft.replace(/\\/g, "") + "</i>" 
                               + "<span class='oni-button-text oni-button-text-middle" + (!iconText ? " oni-button-text-hidden" : "") + "'><slot name='label'></slot></span>" + 
-                              "<i class='oni-icon oni-icon-right'>&nbsp;" + iconRight.replace(/\\/g, "") + "</i>"
+                              "<i class='oni-icon oni-icon-right'>" + iconRight.replace(/\\/g, "") + "</i>"
                   break;
               }
           break;
