@@ -1,8 +1,9 @@
 var avalon = require('avalon2')
 var template = require('text!./template.html')
-require('style!css!oni.compass/oniui-common.css')
 
 require('style!css!./oni.button.css')
+require('style!css!oni.compass/oniui-common.css')
+
 var legalType = {
   icon: 1,
   labeledIcon:1,
@@ -52,7 +53,6 @@ avalon.component('ms-button',{
                               "<i class='oni-icon oni-icon-right'>" + icons.replace(/\\/g, "") + "</i>"
                   break;
                   case "left-right":
-                      console.log(icons)
                       var iconArr = icons && icons.split("-") || ["", ""],
                           iconLeft = iconArr[0],
                           iconRight = iconArr[1]
