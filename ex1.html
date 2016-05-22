@@ -45,6 +45,26 @@
                 <xmp ms-widget="{is:'ms-button', disabled:true, color: 'success', type:'labeledIcon',icon:'\&\#xf001;-\&\#xf06b;',position:'left-right',size:'big'}" >color success</xmp>
                 <xmp ms-widget="{is:'ms-button', disabled:true, color: 'info', type:'labeledIcon',icon:'\&\#xf038;',position:'right',size:'large'}" >color info</xmp>
             </div>
+            <div>
+                <p>按钮组</p>
+                <ms-buttonset ms-widget='{width: 60}'>
+                    <ms-button slot='button'>按钮1</ms-button>
+                    <ms-button slot='button'>按钮2</ms-button>
+                    <ms-button slot='button'>按钮3</ms-button>
+                </ms-buttonset>
+                <ms-buttonset ms-widget='{isVertical: true, color:"warning"}'>
+                    <ms-button slot='button'>按钮1</ms-button>
+                    <ms-button slot='button'>按钮2</ms-button>
+                    <ms-button slot='button'>按钮3</ms-button>
+                </ms-buttonset>
+                <ms-buttonset ms-widget='{isVertical: true,color: "info"}'>
+                    <ms-button slot='button' ms-widget="{icon:'icon',corner:8}">&#xf086;</ms-button>
+                    <ms-button slot='button' ms-widget="{icon:'icon'}">&#xf084;</ms-button>
+                    <ms-button slot='button' ms-widget="{icon:'icon',corner:8}">&#xf085;</ms-button>
+                </ms-buttonset>
+                
+
+            </div>
         </fieldset>
 
     </body>
