@@ -43,7 +43,7 @@ If you want to display **LABELEDICON** type, you don't write **type** in the MS-
 instead of  whiting **icon** and **position** configuration item
 
 ```html
-<!--no "icon" configuration item-->
+<!--no "type" configuration item-->
 <ms-button ms-widget="{position: 'left-right',icon:'\&\#xf047;-\&\#xf03e;'}">has labeled</ms-button>
 
 ```
