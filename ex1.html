@@ -10,22 +10,23 @@
     <body>
         <fieldset ms-controller="ex1">
             <legend>button type</legend>
-            <div>
+           
+           <div>
                 <xmp ms-widget="{is:'ms-button',size: 'default'}">input元素</xmp>
                
-                <xmp ms-widget="{is:'ms-button',type:'icon',position: 'left',icon:'\&\#xf038;'}">button元素</xmp>
-                <xmp ms-widget="{is:'ms-button',type:'icon',position: 'left-right',icon:'\&\#xf047;-\&\#xf03e;'}">button元素</xmp>
-                <xmp ms-widget="{is:'ms-button',type:'labeledIcon',position: 'left',icon:'\&\#xf088;'}">a元素</xmp>
-                <xmp ms-widget="{is:'ms-button',type:'labeledIcon',position: 'right',icon:'\&\#xf06b;'}">div元素</xmp>
+                <xmp ms-widget="{is:'ms-button',position: 'left',icon:'\&\#xf038;'}">button元素</xmp>
+                <xmp ms-widget="{is:'ms-button',position: 'left-right',icon:'\&\#xf047;-\&\#xf03e;'}">button元素</xmp>
+                <xmp ms-widget="{is:'ms-button',position: 'left',icon:'\&\#xf088;'}">a元素</xmp>
+                <xmp ms-widget="{is:'ms-button',position: 'right',icon:'\&\#xf06b;'}">div元素</xmp>
                 <xmp ms-widget="{is:'ms-button',type:'labeledIcon',position: 'left-right',icon:'\&\#xf047;-\&\#xf03e;'}">a元素</xmp>
                
             </div>
             <div><p>带圆角效果</p>
                 <xmp ms-widget="{is:'ms-button',corner:4}">input元素</xmp>
-                <xmp ms-widget="{is:'ms-button',type:'icon',position: 'left',icon:'\&\#xf038;',corner:6}">button元素</xmp>
-                <xmp ms-widget="{is:'ms-button',type:'icon',position: 'left-right',icon:'\&\#xf047;-\&\#xf03e;',corner:8}">button元素</xmp>
-                <xmp ms-widget="{is:'ms-button',type:'labeledIcon',position: 'left',icon:'\&\#xf088;',corner:10}">a元素</xmp>
-                <xmp ms-widget="{is:'ms-button',type:'labeledIcon',position: 'right',icon:'\&\#xf06b;',corner:4}">div元素</xmp>
+                <xmp ms-widget="{is:'ms-button',position: 'left',icon:'\&\#xf038;',corner:6}">button元素</xmp>
+                <xmp ms-widget="{is:'ms-button',position: 'left-right',icon:'\&\#xf047;-\&\#xf03e;',corner:8}">button元素</xmp>
+                <xmp ms-widget="{is:'ms-button',position: 'left',icon:'\&\#xf088;',corner:10}">a元素</xmp>
+                <xmp ms-widget="{is:'ms-button',position: 'right',icon:'\&\#xf06b;',corner:4}">div元素</xmp>
                 <xmp ms-widget="{is:'ms-button',type:'labeledIcon',position: 'left-right',icon:'\&\#xf047;-\&\#xf03e;',corner:4}">a元素</xmp>
                
             </div>
@@ -34,7 +35,7 @@
                 <xmp ms-widget="{is:'ms-button',color: 'warning',type:'labeledIcon',icon:'\&\#xf038;',position:'left'}" >color warning</xmp>
                 <xmp ms-widget="{is:'ms-button',color: 'inverse', type:'labeledIcon',icon:'\&\#xf038;',position:'left',width:120}" >color inverse</xmp>
                 <xmp ms-widget="{is:'ms-button',color: 'danger', type:'labeledIcon',icon:'\&\#xf038;',position:'right',width:120}" >color danger</xmp>
-                <xmp ms-widget="{is:'ms-button',color: 'success', type:'labeledIcon',icon:'\&\#xf001;-\&\#xf06b;',position:'left-right',size:'big'}" >color success</xmp>
+                <xmp ms-widget="{is:'ms-button',color: 'success', type:'labeledIcon',icon:'\&\#xf047;-\&\#xf03e;',position:'left-right',size:'big'}" >color success</xmp>
                 <xmp ms-widget="{is:'ms-button',color: 'info', type:'labeledIcon',icon:'\&\#xf038;',position:'right',size:'large'}" >color info</xmp>
             </div>
              <div><p>颜色与大小</p>
@@ -42,26 +43,31 @@
                 <xmp ms-widget="{is:'ms-button', disabled:true, color: 'warning',type:'labeledIcon',icon:'\&\#xf038;',position:'left'}" >color warning</xmp>
                 <xmp ms-widget="{is:'ms-button', disabled:true, color: 'inverse', type:'labeledIcon',icon:'\&\#xf038;',position:'left',width:120}" >color inverse</xmp>
                 <xmp ms-widget="{is:'ms-button', disabled:true, color: 'danger', type:'labeledIcon',icon:'\&\#xf038;',position:'right',width:120}" >color danger</xmp>
-                <xmp ms-widget="{is:'ms-button', disabled:true, color: 'success', type:'labeledIcon',icon:'\&\#xf001;-\&\#xf06b;',position:'left-right',size:'big'}" >color success</xmp>
+                <xmp ms-widget="{is:'ms-button', disabled:true, color: 'success', type:'labeledIcon',icon:'\&\#xf047;-\&\#xf03e;',position:'left-right',size:'big'}" >color success</xmp>
                 <xmp ms-widget="{is:'ms-button', disabled:true, color: 'info', type:'labeledIcon',icon:'\&\#xf038;',position:'right',size:'large'}" >color info</xmp>
             </div>
+          
             <div>
+               
                 <p>按钮组</p>
                 <ms-buttonset ms-widget='{width: 60}'>
                     <ms-button slot='button'>按钮1</ms-button>
                     <ms-button slot='button'>按钮2</ms-button>
                     <ms-button slot='button'>按钮3</ms-button>
                 </ms-buttonset>
+                
+                 <ms-buttonset ms-widget='{isVertical: true,color: "info"}'>
+                    <ms-button slot='button' ms-widget="{type:'icon',corner:8}">&#xf086;</ms-button>
+                    <ms-button slot='button' ms-widget="{type:'icon'}">&#xf084;</ms-button>
+                    <ms-button slot='button' ms-widget="{type:'icon',corner:8}">&#xf085;</ms-button>
+                </ms-buttonset>
+              
                 <ms-buttonset ms-widget='{isVertical: true, color:"warning"}'>
                     <ms-button slot='button'>按钮1</ms-button>
                     <ms-button slot='button'>按钮2</ms-button>
                     <ms-button slot='button'>按钮3</ms-button>
                 </ms-buttonset>
-                <ms-buttonset ms-widget='{isVertical: true,color: "info"}'>
-                    <ms-button slot='button' ms-widget="{icon:'icon',corner:8}">&#xf086;</ms-button>
-                    <ms-button slot='button' ms-widget="{icon:'icon'}">&#xf084;</ms-button>
-                    <ms-button slot='button' ms-widget="{icon:'icon',corner:8}">&#xf085;</ms-button>
-                </ms-buttonset>
+                 
                 
 
             </div>

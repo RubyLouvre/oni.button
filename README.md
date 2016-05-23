@@ -28,6 +28,27 @@ npm install oni.button
 | color |"default"| "primary", "warning", "danger", "success", "info", "inverse", "default"| the style of the button, as same as bootstrap  |
 | corner | 2 |true or number | the borderRadius value of button|
 
+
+###tricks
+If you want to display **ICON** type, you don't write **icon** or **type** in the MS-WIDGET configuration, 
+instead of  whiting **icon** text in the `<ms-button>` innerText directly
+
+```html
+<!--no "icon" configuration item-->
+<ms-button slot='button' ms-widget="{type:'icon'}">&#xf084;</ms-button>
+
+```
+
+If you want to display **LABELEDICON** type, you don't write **type** in the MS-WIDGET configuration, 
+instead of  whiting **icon** and **position** configuration item
+
+```html
+<!--no "icon" configuration item-->
+<ms-button ms-widget="{position: 'left-right',icon:'\&\#xf047;-\&\#xf03e;'}">has labeled</ms-button>
+
+```
+
+
 ###buttonset
 
 ```html

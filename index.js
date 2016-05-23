@@ -5,6 +5,10 @@ var btnsetTemplate = require('text!./buttonset.html')
 require('style!css!sass!./oni.button.scss')
 require('style!css!oni.compass/oniui-common.css')
 
+var rslash = /\\/g
+function trimSlash(text) {
+    return text.replace(rslash, '')
+}
 
 avalon.component('ms-button', {
     template: btnTemplate,
@@ -24,36 +28,43 @@ avalon.component('ms-button', {
         if (vm.disabled) {
             vm.buttonDisabledClass = 'oni-state-disabled'
         }
+        //
         var icons = vm.icon
-        if (icons.length > 1) {
-            if (!vm.type) {
+        if (icons.length > 1 ) {
+            if (!vm.type || vm.position ) {
                 vm.type = 'labeledIcon'
             }
         }
-        var iconText = false, buttonText = ""
+   
+        var buttonText = ""
         switch (vm.type) {
             case "text":
                 buttonText = "<span class='oni-button-text'><slot name='label'></slot></span>"
                 break;
+            case "icon":
+                if (!(icons || '').trim()) {
+                    buttonText = "<i class='oni-icon'><slot name='label'></slot></i>"
+                } else {
+                    buttonText = "<i class='oni-icon'>" + trimSlash(icons) + "</i>"
+                }
+                break
             case "labeledIcon":
-                iconText = true
-            default:
+
                 switch (vm.position) {
                     case "left":
-                        buttonText = "<i class='oni-icon oni-icon-left'>" + icons.replace(/\\/g, "") + "</i>" +
-                                "<span class='oni-button-text oni-button-text-right" + (!iconText ? " oni-button-text-hidden" : "") + "'><slot name='label'></slot></span>"
+                        buttonText = "<i class='oni-icon oni-icon-left'>" + trimSlash(icons) + "</i>" +
+                                "<span class='oni-button-text oni-button-text-right'><slot name='label'></slot></span>"
                         break;
                     case "right":
-                        buttonText = "<span class='oni-button-text oni-button-text-left" + (!iconText ? " oni-button-text-hidden" : "") + "'><slot name='label'></slot></span>" +
-                                "<i class='oni-icon oni-icon-right'>" + icons.replace(/\\/g, "") + "</i>"
+                        buttonText = "<span class='oni-button-text oni-button-text-left'><slot name='label'></slot></span>" +
+                                "<i class='oni-icon oni-icon-right'>" + trimSlash(icons) + "</i>"
                         break;
                     case "left-right":
-                        var iconArr = icons && icons.split("-") || ["", ""],
-                                iconLeft = iconArr[0],
-                                iconRight = iconArr[1]
-                        buttonText = "<i class='oni-icon oni-icon-left'>" + iconLeft.replace(/\\/g, "") + "</i>"
-                                + "<span class='oni-button-text oni-button-text-middle" + (!iconText ? " oni-button-text-hidden" : "") + "'><slot name='label'></slot></span>" +
-                                "<i class='oni-icon oni-icon-right'>" + iconRight.replace(/\\/g, "") + "</i>"
+                        var iconArr = icons && icons.split("-") || ["", ""]
+
+                        buttonText = "<i class='oni-icon oni-icon-left'>" + trimSlash(iconArr[0]) + "</i>"
+                                + "<span class='oni-button-text oni-button-text-middle'><slot name='label'></slot></span>" +
+                                "<i class='oni-icon oni-icon-right'>" + trimSlash(iconArr[1]) + "</i>"
                         break;
                 }
                 break;
@@ -68,7 +79,7 @@ avalon.component('ms-button', {
         buttonSizeClass: '',
         buttonDisabledClass: '',
         buttonColorClass: '',
-        position: 'left',
+        position: '',
         label: '',
         iconPosition: '', //@config 当type为icon或者labeledIcon时，定义icon在哪边，默认在text的左边，也可以配置为右边("right"),或者两边都有("left-right")
         icon: "", //@config  当type为icon或者labeledIcon时，定义展示icon的内容，本组件的icon是使用web font实现，当iconPosition为"left"或者"right"时，将icon的码赋给icon，当iconPosition为"left-right",将left icon与right icon的码以"-"分隔，比如data-button-icon="\&\#xf001;-\&\#xf06b;"
